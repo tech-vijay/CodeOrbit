@@ -5,7 +5,9 @@ import Footer from '@/components/Footer';
 import ChatBot from '@/components/ChatBot';
 import HomePage from '@/pages/HomePage';
 import ContactPage from '@/pages/ContactPage';
-import WebDevelopmentPage from '@/pages/WebDevelopmentPage';
+import AboutPage from '@/pages/AboutPage';
+import ServicePage from '@/pages/ServicePage';
+
 
 function ScrollToHash() {
   const { pathname, hash } = useLocation();
@@ -34,7 +36,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/services/web-development" element={<WebDevelopmentPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services/:slug" element={<ServicePage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </main>

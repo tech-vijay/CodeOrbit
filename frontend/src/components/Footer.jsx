@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white">Services</h4>
-            <ul className="mt-4 space-y-3 text-sm">{services.slice(0, 6).map((s) => (<li key={s.title}><Link to={s.slug === 'web-development' ? '/services/web-development' : '/contact'} className="transition-colors hover:text-cyan-400">{s.title}</Link></li>))}</ul>
+            <ul className="mt-4 space-y-3 text-sm">{services.slice(0, 6).map((s) => (<li key={s.title}><Link to={`/services/${s.slug}`} className="transition-colors hover:text-cyan-400">{s.title}</Link></li>))}</ul>
           </div>
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white">Contact</h4>

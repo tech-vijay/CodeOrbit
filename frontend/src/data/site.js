@@ -1,31 +1,142 @@
 import {
   Search,
-  MousePointerClick,
-  Code2,
-  PenTool,
   Share2,
   Smartphone,
   Palette,
   AppWindow,
   Wrench,
-  Megaphone,
-  LineChart,
-  Mail,
-} from 'lucide-react';
+  Globe,
+  Bot,
+  BrainCircuit,
+  DatabaseZap,
+  ShoppingCart,
+  Workflow,
+  Cloud,
+  ShieldCheck,
+  Blocks,
+  Code2,
+} from "lucide-react";
 
 export const services = [
-  { icon: Search, title: 'Search Engine Optimization', description: 'Professional SEO services that help websites increase their organic search score drastically in order to compete for the highest rankings — even when it comes to the toughest of keywords.', slug: 'search-engine-optimization' },
-  { icon: MousePointerClick, title: 'Pay Per Click', description: 'PPC services are becoming increasingly popular with online transactions growing by the day. Pay per click advertising puts your brand in front of buyers at the exact moment of intent.', slug: 'pay-per-click' },
-  { icon: Code2, title: 'Website Development', description: 'Best web development company delivering fast, secure, and scalable websites that extend efficiency at its best — engineered to convert visitors into loyal customers.', slug: 'web-development' },
-  { icon: PenTool, title: 'Content Writing', description: 'Compelling, SEO-rich content crafted by seasoned writers who understand your industry. We produce copy that ranks, engages, and drives measurable business outcomes.', slug: 'content-writing' },
-  { icon: Share2, title: 'Social Media Marketing', description: 'Search engine marketing is the oldest and most effective online marketing technique. We amplify your brand across every social channel where your audience already lives.', slug: 'social-media-marketing' },
-  { icon: Smartphone, title: 'Mobile App Advertising', description: 'Mobile app advertising is a growing trend. As more businesses offer quality apps to their clients, the need to advertise them strategically has never been greater.', slug: 'mobile-app-advertising' },
-  { icon: Palette, title: 'Graphic Design Services', description: 'Times have emerged and so have the best practices in marketing. Brands and their audiences have evolved — we craft visual identities that resonate at every touchpoint.', slug: 'graphic-design' },
-  { icon: AppWindow, title: 'Application Development', description: 'Application development is fast gaining ground in upcoming business models. We build robust, user-centric applications that power your operations and growth.', slug: 'application-development' },
-  { icon: Wrench, title: 'Website Maintenance', description: 'Planning a new website or maintaining an existing one? Correct website maintenance keeps your platform secure, fast, and reliably available around the clock.', slug: 'website-maintenance' },
-  { icon: Megaphone, title: 'Online Reputation Management', description: 'Build and protect your brand image with proactive reputation management. We monitor, respond, and amplify the narrative that customers see about you online.', slug: 'online-reputation-management' },
-  { icon: LineChart, title: 'Conversion Rate Optimization', description: 'Turn more of your existing traffic into paying customers with data-driven CRO. We test, refine, and optimize every step of your funnel for maximum ROI.', slug: 'conversion-rate-optimization' },
-  { icon: Mail, title: 'Email Marketing', description: 'Reach your audience directly with personalized email campaigns that nurture leads, retain customers, and drive repeat revenue on autopilot.', slug: 'email-marketing' },
+  {
+    icon: Globe,
+    title: "Web Development",
+    description:
+      "Build high-performance, SEO-optimized websites and web applications using React, Next.js, Node.js, and modern cloud technologies.",
+    slug: "web-development",
+  },
+
+  {
+    icon: Code2,
+    title: "Custom Software Development",
+    description:
+      "Develop scalable business software, CRM systems, ERP platforms, SaaS products, and enterprise-grade applications tailored to your requirements.",
+    slug: "custom-software-development",
+  },
+
+  {
+    icon: Bot,
+    title: "AI Agent Development",
+    description:
+      "Create intelligent AI agents powered by LLMs that automate workflows, perform reasoning, integrate APIs, and boost business productivity.",
+    slug: "ai-agent-development",
+  },
+
+  {
+    icon: BrainCircuit,
+    title: "Generative AI Solutions",
+    description:
+      "Build AI-powered chatbots, copilots, knowledge assistants, and custom GenAI applications using OpenAI, Claude, Gemini, LangChain, and LangGraph.",
+    slug: "generative-ai-solutions",
+  },
+
+  {
+    icon: Workflow,
+    title: "AI Automation",
+    description:
+      "Automate repetitive business processes with AI workflows, CRM integrations, document processing, and intelligent task automation.",
+    slug: "ai-automation",
+  },
+
+  {
+    icon: DatabaseZap,
+    title: "Data Science & Machine Learning",
+    description:
+      "Develop predictive models, recommendation engines, analytics dashboards, and machine learning systems for data-driven decision making.",
+    slug: "machine-learning-solutions",
+  },
+
+  {
+    icon: ShoppingCart,
+    title: "E-Commerce Solutions",
+    description:
+      "Build secure online stores with payment integration, inventory management, AI-powered recommendations, and seamless shopping experiences.",
+    slug: "ecommerce-development",
+  },
+
+  {
+    icon: Smartphone,
+    title: "Mobile App Development",
+    description:
+      "Design and develop cross-platform Android and iOS applications with modern UI, scalable architecture, and high performance.",
+    slug: "mobile-app-development",
+  },
+
+  {
+    icon: AppWindow,
+    title: "SaaS Product Development",
+    description:
+      "Launch scalable SaaS platforms with authentication, subscriptions, dashboards, APIs, multi-tenancy, and cloud deployment.",
+    slug: "saas-development",
+  },
+
+  {
+    icon: Palette,
+    title: "UI/UX Design",
+    description:
+      "Design intuitive user experiences, responsive interfaces, design systems, and interactive prototypes that maximize engagement.",
+    slug: "ui-ux-design",
+  },
+
+  {
+    icon: Search,
+    title: "SEO Optimization",
+    description:
+      "Increase organic traffic with technical SEO, on-page optimization, Core Web Vitals improvements, and content strategy.",
+    slug: "seo-optimization",
+  },
+
+  {
+    icon: Share2,
+    title: "Digital Marketing",
+    description:
+      "Scale your business with social media marketing, paid advertising, content marketing, branding, and lead generation campaigns.",
+    slug: "digital-marketing",
+  },
+
+  {
+    icon: Blocks,
+    title: "API Development & Integration",
+    description:
+      "Build secure REST APIs, integrate third-party services, payment gateways, CRMs, AI models, and enterprise software.",
+    slug: "api-development",
+  },
+
+  {
+    icon: Cloud,
+    title: "Cloud & DevOps",
+    description:
+      "Deploy, monitor, and scale applications using Docker, AWS, Vercel, CI/CD pipelines, cloud infrastructure, and DevOps best practices.",
+    slug: "cloud-devops",
+  },
+
+  {
+    icon: ShieldCheck,
+    title: "Website Maintenance",
+    description:
+      "Ensure your applications remain secure, fast, updated, and reliable with continuous monitoring, backups, and technical support.",
+    slug: "website-maintenance",
+  },
 ];
 
 export const stats = [
@@ -53,6 +164,7 @@ export const portfolio = [
 
 export const navLinks = [
   { label: 'Home', href: '/' },
+  { label: 'About', href: '/#about' },
   { label: 'Services', href: '/#services' },
   { label: 'Portfolio', href: '/#portfolio' },
   { label: 'Testimonials', href: '/#testimonials' },

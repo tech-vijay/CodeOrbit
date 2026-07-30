@@ -15,18 +15,23 @@ export default function Services() {
         </div>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => {
-            const isWebDev = s.slug === 'web-development';
-            const Card = (
-              <article className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-cyan-500/10 ${isWebDev ? 'border-cyan-300 ring-1 ring-cyan-200' : 'border-slate-200 hover:border-cyan-300'}`}>
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-50 to-blue-50 text-cyan-600 transition-all duration-300 group-hover:from-cyan-400 group-hover:to-blue-600 group-hover:text-white"><s.icon className="h-7 w-7" /></div>
-                <h3 className="text-lg font-bold text-slate-900">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">{s.description}</p>
-                <div className="mt-5 flex items-center gap-1 text-sm font-semibold text-cyan-600">{isWebDev ? 'View full details' : 'Learn more'}<ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></div>
-                {isWebDev && <span className="absolute right-4 top-4 rounded-full bg-cyan-100 px-2.5 py-0.5 text-xs font-semibold text-cyan-700">Featured</span>}
-                <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-cyan-400/0 blur-2xl transition-all duration-500 group-hover:bg-cyan-400/20" />
-              </article>
+            const route = `/services/${s.slug}`;
+            return (
+              <Link key={s.title} to={route} className="block h-full">
+                <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-500/10">
+                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-50 to-blue-50 text-cyan-600 transition-all duration-300 group-hover:from-cyan-400 group-hover:to-blue-600 group-hover:text-white">
+                    <s.icon className="h-7 w-7" />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900">{s.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">{s.description}</p>
+                  <div className="mt-5 flex items-center gap-1 text-sm font-semibold text-cyan-600">
+                    View full details
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </div>
+                  <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-cyan-400/0 blur-2xl transition-all duration-500 group-hover:bg-cyan-400/20" />
+                </article>
+              </Link>
             );
-            return isWebDev ? <Link key={s.title} to="/services/web-development" className="block h-full">{Card}</Link> : <Link key={s.title} to="/contact" className="block h-full">{Card}</Link>;
           })}
         </div>
       </div>

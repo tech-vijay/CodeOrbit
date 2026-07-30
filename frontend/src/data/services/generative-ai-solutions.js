@@ -1,0 +1,78 @@
+import { Sparkles, BrainCircuit, Bot, DatabaseZap, ShieldCheck, Rocket, RefreshCw, Code2 } from 'lucide-react';
+
+const serviceData = {
+  slug: 'generative-ai-solutions',
+  hero: {
+    badge: 'Service — Generative AI Solutions',
+    title: 'Generative AI experiences that feel natural, useful, and built for business',
+    description: 'We build copilots, knowledge assistants, content systems, and AI products that help teams move faster and make better decisions.',
+    image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop',
+    highlights: ['Custom copilots', 'RAG-powered knowledge', 'Fast prototyping', 'Secure deployment'],
+    primaryCta: { label: 'Explore AI Ideas', href: '#inquiry' },
+    secondaryCta: { label: 'View Pricing', href: '#pricing' },
+  },
+  subServicesHeading: 'What We Build',
+  subServicesTitle: 'AI products that connect insight with action',
+  subServicesDescription: 'We create interfaces and systems built around users, content, and practical automation.',
+  subServices: [
+    { icon: Bot, title: 'Copilot Experiences', description: 'AI assistants that help users write, research, summarize, and answer questions in-context.' },
+    { icon: BrainCircuit, title: 'Knowledge Systems', description: 'Grounded AI experiences connected to your documents, products, and internal knowledge base.' },
+    { icon: Sparkles, title: 'Content Generation', description: 'Systems for drafting marketing content, support responses, product descriptions, and internal documents.' },
+    { icon: DatabaseZap, title: 'AI Product Features', description: 'Embedded AI tools and experiences inside web apps, portals, and customer journeys.' },
+  ],
+  processHeading: 'Our Process',
+  processTitle: 'From concept to polished AI experience',
+  processDescription: 'We keep the experience aligned with your audience through research, prototyping, validation, and refinement.',
+  processSteps: [
+    { number: '01', title: 'Discovery', description: 'We clarify where generative AI adds the most value and what experience needs to feel natural.', icon: BrainCircuit },
+    { number: '02', title: 'Design', description: 'We define prompts, UX patterns, guardrails, and the right interactions for your users.', icon: Bot },
+    { number: '03', title: 'Build', description: 'We implement the AI product and tie it into the systems your users already rely on.', icon: Code2 },
+    { number: '04', title: 'Test', description: 'We validate factual accuracy, quality, and user comfort before launch.', icon: ShieldCheck },
+    { number: '05', title: 'Launch', description: 'We deploy the product and measure adoption, quality, and feedback.', icon: Rocket },
+    { number: '06', title: 'Scale', description: 'We iterate quickly as usage grows and new requirements emerge.', icon: RefreshCw },
+  ],
+  techStackHeading: 'Our Tech Stack',
+  techStackTitle: 'Practical tools for production AI',
+  techStackDescription: 'We use proven deployment and model infrastructure so AI experiences stay reliable.',
+  techStack: [
+    { category: 'Models', items: ['OpenAI', 'Anthropic', 'Gemini', 'Azure OpenAI'] },
+    { category: 'RAG', items: ['Embeddings', 'Vector Search', 'Chunking', 'Knowledge Base'] },
+    { category: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'] },
+    { category: 'Backend', items: ['Node.js', 'Python', 'FastAPI', 'PostgreSQL'] },
+  ],
+  projectsHeading: 'Recent Work',
+  projectsTitle: 'Generative AI experiences we have built',
+  projects: [
+    { title: 'Bloom — AI Content Studio', category: 'Content AI', description: 'A content assistant that helps teams ideate faster and maintain brand voice.', image: 'https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop' },
+    { title: 'Forge — Knowledge Copilot', category: 'Knowledge AI', description: 'An internal assistant trained on onboarding and product documentation.', image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop' },
+  ],
+  pricingHeading: 'Pricing',
+  pricingTitle: 'Flexible pricing for AI product delivery',
+  pricingDescription: 'We help you prototype quickly and scale with confidence.',
+  pricing: [
+    { name: 'Prototype AI', price: '$3,499', price_inr: '₹3,499', amount_paise: 349900, period: 'project', description: 'A well-scoped AI experience for testing and validation.', features: ['1 feature flow', 'Prompt design', 'Basic knowledge integration', 'Deployment support'], highlighted: false },
+    { name: 'Product AI', price: '$9,999', price_inr: '₹9,999', amount_paise: 999900, period: 'project', description: 'A polished AI feature that is ready for user adoption and iteration.', features: ['Multiple AI features', 'RAG integration', 'Analytics overview', '3 months support'], highlighted: true },
+    { name: 'Enterprise AI', price: 'Custom', price_inr: 'Custom', amount_paise: 0, period: 'quote', description: 'A large-scale AI platform with governance and enterprise readiness.', features: ['Advanced security', 'Custom architecture', 'Dedicated roadmap', 'Enterprise rollout'], highlighted: false },
+  ],
+  faqHeading: 'FAQ',
+  faqTitle: 'Questions about generative AI',
+  faqs: [
+    { question: 'Do you build AI features for existing products?', answer: 'Yes. We can add AI capabilities into your current product experience with thoughtful UX and integration planning.' },
+    { question: 'How do you control AI quality?', answer: 'We use prompt design, retrieval grounding, evaluation, and feedback loops to improve quality over time.' },
+  ],
+  inquiry: {
+    heading: 'Request a Quote',
+    title: 'Let’s build the AI experience your users need',
+    description: 'Share your use case and we will help shape a practical, valuable AI experience.',
+    contacts: [{ label: 'Email', value: 'hello@digitalprisma.com' }, { label: 'Phone / WhatsApp', value: '+91 89209 28177' }, { label: 'Office', value: 'Noida, Uttar Pradesh, India' }],
+    ratingText: 'Rated 5.0 by teams launching AI-first experiences',
+    successMessage: 'Your generative AI inquiry has been received. We will reach out soon.',
+    placeholder: 'Describe the AI feature, content workflow, or knowledge system you want to build...',
+    source: 'generative-ai-inquiry',
+  },
+  projectTypes: ['Copilot', 'Knowledge Assistant', 'Content Workflow', 'AI Feature', 'Other'],
+  budgets: ['Under $3,000', '$3,000 - $8,000', '$8,000 - $20,000', '$20,000+', 'Not sure yet'],
+  timelines: ['ASAP', '2-4 weeks', '1-2 months', '2+ months', 'Flexible'],
+};
+
+export default serviceData;

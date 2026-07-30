@@ -2,11 +2,7 @@ import mongoose from 'mongoose';
 
 const formSubmissionSchema = new mongoose.Schema(
   {
-    source: {
-      type: String,
-      enum: ['contact', 'inquiry', 'web-development-inquiry', 'general', 'chat'],
-      default: 'general',
-    },
+    source: { type: String, default: 'general', trim: true },
     form_type: { type: String, default: 'form_submission' },
     name: { type: String, default: '' },
     email: { type: String, default: '' },

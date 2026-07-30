@@ -80,7 +80,14 @@ MONGODB_URI=your_mongodb_atlas_connection_string
 GEMINI_API_KEY=your_gemini_api_key
 RAZORPAY_KEY_ID=your_razorpay_key_id
 RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+RESEND_API_KEY=re_your_resend_api_key
+EMAIL_FROM=Code Orbit <leads@your-domain.com>
+CONTACT_NOTIFICATION_EMAIL=your-personal-email@example.com
 ```
+
+### Contact-form email notifications
+
+Every website contact or service inquiry is stored in MongoDB and also sent to `CONTACT_NOTIFICATION_EMAIL` using [Resend](https://resend.com). Verify the domain used in `EMAIL_FROM` in your Resend account before deploying.
 
 `CLIENT_URL` can contain multiple comma-separated origins if needed, for example:
 

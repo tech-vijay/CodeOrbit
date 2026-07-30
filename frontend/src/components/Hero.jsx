@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star } from 'lucide-react';
+import webDevelopmentHero from '@/assets/web-development-hero.png';
 
 const slides = [
   { eyebrow: 'Digital Marketing Excellence', title: 'Elevate Your Online Presence', subtitle: 'Transform Your Brand With Code Orbit', image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop' },
-  { eyebrow: 'Expert Web & App Development', title: 'Build Better Digital Experiences', subtitle: 'Code Orbit Your Path to Success', image: 'https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop' },
+  { eyebrow: 'Expert Web & App Development', title: 'Build Better Digital Experiences', subtitle: 'Code Orbit Your Path to Success', image: webDevelopmentHero },
   { eyebrow: 'Grow Your Business Online', title: 'Data-Driven Growth Strategies', subtitle: 'Partner With Code Orbit Today', image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop' },
 ];
 
@@ -20,8 +21,8 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen overflow-hidden bg-slate-950">
       {slides.map((slide, i) => (
         <div key={i} className={`absolute inset-0 transition-opacity duration-1000 ${i === active ? 'opacity-100' : 'opacity-0'}`}>
-          <img src={slide.image} alt="" className="h-full w-full object-cover" loading={i === 0 ? 'eager' : 'lazy'} />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/40" />
+          <img src={slide.image} alt="" className={`h-full w-full object-cover ${i === 1 ? 'object-[70%_center]' : ''}`} loading={i === 0 ? 'eager' : 'lazy'} />
+          <div className={`absolute inset-0 ${i === 1 ? 'bg-gradient-to-r from-slate-950 via-slate-950/60 to-slate-950/5' : 'bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/40'}`} />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/60" />
         </div>
       ))}

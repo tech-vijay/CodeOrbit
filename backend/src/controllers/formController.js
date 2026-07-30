@@ -1,4 +1,5 @@
 import FormSubmission from '../models/FormSubmission.js';
+import { sendLeadNotification } from '../services/emailService.js';
 
 function normalizePayload(body = {}) {
   const payload = body || {};
@@ -21,6 +22,12 @@ function normalizePayload(body = {}) {
 export async function createFormSubmission(req, res) {
   try {
     const submission = await FormSubmission.create(normalizePayload(req.body));
+    try {
+      await sendLeadNotification(submission);
+    } catch (emailError) {
+      // The lead is safely stored even if the external mail provider is temporarily unavailable.
+      console.error('Lead email notification failed:', emailError.message);
+    }
     return res.status(201).json({ success: true, data: submission });
   } catch (err) {
     return res.status(500).json({ error: 'Something went wrong' });

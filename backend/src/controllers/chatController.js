@@ -101,6 +101,19 @@ function buildGenerationConfig() {
   };
 }
 
+function getApiErrorStatus(error) {
+  return error?.status || error?.error?.code || error?.error?.status;
+}
+
+function getRetryAfterSeconds(error) {
+  const retryInfo = error?.error?.details?.find(
+    (detail) => detail?.['@type'] === 'type.googleapis.com/google.rpc.RetryInfo'
+  );
+  const retryDelay = retryInfo?.retryDelay;
+  const seconds = typeof retryDelay === 'string' ? Number.parseFloat(retryDelay) : NaN;
+  return Number.isFinite(seconds) && seconds > 0 ? Math.ceil(seconds) : null;
+}
+
 /**
  * Calls the Gemini API with retry logic for transient errors.
  */
@@ -116,12 +129,14 @@ async function generateContentWithRetry(ai, models, request, retries = 5, delay 
       } catch (error) {
         lastError = error;
 
-        if (error.status === 404 && modelIndex < models.length - 1) {
+        const status = getApiErrorStatus(error);
+
+        if (status === 404 && modelIndex < models.length - 1) {
           console.warn(`Gemini model "${model}" is unavailable. Trying "${models[modelIndex + 1]}".`);
           break;
         }
 
-        if (error.status === 503 && i < retries - 1) {
+        if (status === 503 && i < retries - 1) {
           console.warn(
             `Gemini API is unavailable (503). Retrying in ${retryDelay}ms... (${
               i + 1
@@ -187,6 +202,19 @@ export async function handleChat(req, res) {
 
     res.json({ reply: botMessage });
   } catch (error) {
+    const status = getApiErrorStatus(error);
+    const retryAfter = getRetryAfterSeconds(error);
+
+    if (status === 429) {
+      console.warn(`Gemini quota exceeded${retryAfter ? `. Retry after ${retryAfter}s.` : '.'}`);
+      return res.status(429).json({
+        error: retryAfter
+          ? `The chat service is temporarily busy. Please try again in about ${retryAfter} seconds.`
+          : 'The chat service is temporarily busy. Please try again shortly.',
+        retry_after: retryAfter,
+      });
+    }
+
     console.error('Gemini API Error:', error);
     res.status(503).json({ error: CONTACT_FALLBACK });
   }

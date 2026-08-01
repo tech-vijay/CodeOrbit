@@ -72,6 +72,15 @@ export default function ChatBot() {
   function handleFileSelect(event) {
     const file = event.target.files?.[0];
     if (file) {
+      if (!file.type.startsWith('image/')) {
+        setMessages((prev) => [...prev, {
+          id: `file_error_${Date.now()}`,
+          role: 'assistant',
+          content: 'Please choose an image file (JPEG, PNG, GIF, or WEBP).',
+        }]);
+        event.target.value = '';
+        return;
+      }
       setImageFile(file);
       setImagePreview(URL.createObjectURL(file));
       inputRef.current?.focus();
@@ -121,7 +130,10 @@ export default function ChatBot() {
 
       setMessages((prev) => [...prev, { id: `bot_${Date.now()}`, role: 'assistant', content: res.reply }]);
     } catch (err) {
-      const errorContent = err.message.includes('upload') 
+      const errorMessage = err instanceof Error ? err.message.toLowerCase() : '';
+      const errorContent = err?.status === 429
+        ? err.message
+        : errorMessage.includes('upload') || errorMessage.includes('image')
         ? "Sorry, I couldn't upload that image. Please try another one."
         : "I'm having trouble reaching the service right now. Please contact us directly.";
       setMessages((prev) => [...prev, { id: `err_${Date.now()}`, role: 'assistant', content: errorContent }]);

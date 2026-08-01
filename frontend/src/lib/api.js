@@ -1,4 +1,4 @@
-const DEPLOYED_API_URL = 'https://digital-prism.onrender.com/api';
+const DEPLOYED_API_URL = 'https://codeorbit-backend-jo5j.onrender.com/api';
 const LOCAL_API_URL = 'http://localhost:5002/api';
 const envApiUrl = import.meta.env.VITE_API_URL;
 const isLocalhostApi = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?(\/|$)/i.test(envApiUrl || '');

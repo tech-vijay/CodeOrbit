@@ -15,6 +15,7 @@ const app = express();
 const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:3000',
+  'https://code-orbit-gamma.vercel.app',
   'https://digital-prism.vercel.app',
   ...(process.env.CLIENT_URL || '').split(','),
 ]

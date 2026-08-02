@@ -55,34 +55,34 @@ npm run dev
 ## Deployment
 
 Current deployed URLs:
-- Frontend: `https://digital-prism.vercel.app`
-- Backend: `https://digital-prism.onrender.com`
-- API health check: `https://digital-prism.onrender.com/api/health`
+- Frontend (Vercel): `https://code-orbit-gamma.vercel.app`
+- Backend (Render): `https://codeorbit-backend-jo5j.onrender.com`
+- API health check: `https://codeorbit-backend-jo5j.onrender.com/api/health`
 
 ### Vercel frontend environment variables
 
-Set this in the Vercel project settings:
+Set this in your **Vercel project settings**:
 
 ```bash
-VITE_API_URL=https://digital-prism.onrender.com/api
+VITE_API_URL=https://codeorbit-backend-jo5j.onrender.com/api
 ```
 
-The frontend also has a production fallback to the same Render API URL, so the deployed site will not call localhost if this variable is missing.
+The frontend automatically falls back to `https://codeorbit-backend-jo5j.onrender.com/api` in production if `VITE_API_URL` is omitted.
 
 ### Render backend environment variables
 
-Set these in the Render service settings:
+Set these in your **Render service settings**:
 
 ```bash
-CLIENT_URL=https://digital-prism.vercel.app
+CLIENT_URL=https://code-orbit-gamma.vercel.app
 PORT=5002
 MONGODB_URI=your_mongodb_atlas_connection_string
 GEMINI_API_KEY=your_gemini_api_key
 RAZORPAY_KEY_ID=your_razorpay_key_id
 RAZORPAY_KEY_SECRET=your_razorpay_key_secret
 RESEND_API_KEY=re_your_resend_api_key
-EMAIL_FROM=Code Orbit <leads@your-domain.com>
-CONTACT_NOTIFICATION_EMAIL=your-personal-email@example.com
+EMAIL_FROM=onboarding@resend.dev
+CONTACT_NOTIFICATION_EMAIL=your-email@example.com
 ```
 
 ### Contact-form email notifications

@@ -5,9 +5,6 @@ import fetch from 'node-fetch';
 
 dotenv.config();
 
-const ai = process.env.GEMINI_API_KEY
-  ? new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY })
-  : null;
 const DEFAULT_GEMINI_MODEL = 'gemini-2.5-flash';
 const GEMINI_MODELS = [
   process.env.GEMINI_MODEL || DEFAULT_GEMINI_MODEL,
@@ -16,12 +13,37 @@ const GEMINI_MODELS = [
 ].filter((model, index, models) => model && models.indexOf(model) === index);
 const MAX_OUTPUT_TOKENS = Number(process.env.GEMINI_MAX_OUTPUT_TOKENS || 500);
 const CONTACT_FALLBACK =
-  "I'm having trouble connecting right now. Please reach us at hello@digitalprisma.com or +91 89209 28177.";
+  "Welcome to Code Orbit! For inquiries, reach us at hello@codeorbit.com or +91 89209 28177.";
 const SYSTEM_INSTRUCTION =
   'You are a friendly and helpful assistant for Code Orbit, a full-service digital marketing and web development agency. ' +
   'Answer questions about Code Orbit, web development, app development, digital marketing, SEO, PPC, content creation, design, branding, ecommerce, and project inquiries. ' +
   'Keep answers concise, practical, and warm. When a user asks for pricing or a custom quote, ask for the project scope and suggest contacting the team. ' +
   'If you do not know the answer, say you will connect them with a human expert and share hello@codeorbit.com or +91 89209 28177.';
+
+function getOfflineResponse(message = '') {
+  const msg = message.toLowerCase();
+
+  if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey')) {
+    return "Hello! Welcome to Code Orbit. How can we help you with your web, app, or digital marketing project today?";
+  }
+  if (msg.includes('price') || msg.includes('cost') || msg.includes('quote') || msg.includes('rate') || msg.includes('pricing')) {
+    return "Our pricing depends on project scope and custom requirements. Reach out to us at hello@codeorbit.com or +91 89209 28177 for a custom estimate!";
+  }
+  if (msg.includes('service') || msg.includes('offer') || msg.includes('do you do') || msg.includes('what do you do')) {
+    return "Code Orbit offers Web Development, Mobile App Development, Digital Marketing, SEO, UI/UX Design, and Custom Software Solutions. How can we assist your business?";
+  }
+  if (msg.includes('contact') || msg.includes('email') || msg.includes('phone') || msg.includes('number') || msg.includes('call') || msg.includes('reach')) {
+    return "You can reach the Code Orbit team via email at hello@codeorbit.com or call us directly at +91 89209 28177.";
+  }
+  if (msg.includes('web') || msg.includes('website') || msg.includes('frontend') || msg.includes('react')) {
+    return "We specialize in modern, high-performance web application development using React, Node.js, Next.js, and custom stack solutions!";
+  }
+  if (msg.includes('seo') || msg.includes('marketing') || msg.includes('ppc') || msg.includes('growth')) {
+    return "Our digital marketing services include SEO optimization, PPC management, content creation, and targeted lead generation strategies.";
+  }
+
+  return CONTACT_FALLBACK;
+}
 
 // In-memory store for chat histories (for a single session)
 const chatHistories = {};
@@ -161,9 +183,21 @@ export async function handleChat(req, res) {
   if ((!message && !imageUrl) || !sessionId) {
     return res.status(400).json({ error: 'Session ID and either a message or an image URL are required' });
   }
-  if (!ai) {
-    return res.status(503).json({ error: CONTACT_FALLBACK });
+
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    const fallbackMessage = getOfflineResponse(message);
+    if (!chatHistories[sessionId]) chatHistories[sessionId] = [];
+    chatHistories[sessionId].push({ role: 'user', message, imageUrl });
+    chatHistories[sessionId].push({ role: 'assistant', message: fallbackMessage });
+    await Promise.all([
+      saveChatMessage(sessionId, 'user', message, imageUrl),
+      saveChatMessage(sessionId, 'assistant', fallbackMessage),
+    ]);
+    return res.json({ reply: fallbackMessage });
   }
+
+  const ai = new GoogleGenAI({ apiKey });
 
   try {
     if (!chatHistories[sessionId]) {
@@ -216,7 +250,7 @@ export async function handleChat(req, res) {
     }
 
     console.error('Gemini API Error:', error);
-    res.status(503).json({ error: CONTACT_FALLBACK });
+    res.json({ reply: CONTACT_FALLBACK });
   }
 }
 

@@ -154,12 +154,46 @@ export const testimonials = [
 ];
 
 export const portfolio = [
-  { title: 'Lumen Retail — E-commerce SEO', category: 'SEO', image: 'https://images.pexels.com/photos/5632400/pexels-photo-5632400.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop' },
-  { title: 'NorthPeak — Brand & Web', category: 'Web Development', image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop' },
-  { title: 'Verve Hotels — Social Campaign', category: 'Social Media', image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop' },
-  { title: 'Forge Industrial — PPC', category: 'Pay Per Click', image: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop' },
-  { title: 'Bloom Cosmetics — Content', category: 'Content Writing', image: 'https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop' },
-  { title: 'Atlas Fitness — App Launch', category: 'App Advertising', image: 'https://images.pexels.com/photos/4498152/pexels-photo-4498152.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop' },
+  {
+    title: 'StyleHub — E-Commerce Platform',
+    category: 'E-Commerce',
+    description: 'Modern online store with seamless shopping experience, product catalog, cart management, and responsive design.',
+    image: 'https://images.pexels.com/photos/5632400/pexels-photo-5632400.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+    liveUrl: 'https://stylehub-alpha.vercel.app',
+    isLive: true,
+  },
+  {
+    title: 'Digital Prism — Service Business Web App',
+    category: 'Web Development',
+    description: 'Sleek, service-based web platform designed for digital solutions, agency services, and client growth.',
+    image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+    liveUrl: 'https://digital-prism.vercel.app',
+    isLive: true,
+  },
+  {
+    title: 'Lumen Retail — E-commerce SEO',
+    category: 'SEO',
+    description: 'Technical SEO overhaul and content strategy driving 3x organic growth for retail platform.',
+    image: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+  },
+  {
+    title: 'Verve Hotels — Social Campaign',
+    category: 'Social Media',
+    description: 'Brand storytelling and target social campaigns yielding 4x engagement across platforms.',
+    image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+  },
+  {
+    title: 'Forge Industrial — Digital Marketing',
+    category: 'Pay Per Click',
+    description: 'High-converting PPC lead generation campaigns and real-time performance analytics.',
+    image: 'https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+  },
+  {
+    title: 'Atlas Fitness — App Launch Strategy',
+    category: 'App Advertising',
+    description: 'Full product launch strategy, mobile store presence, and targeted acquisition campaign.',
+    image: 'https://images.pexels.com/photos/4498152/pexels-photo-4498152.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+  },
 ];
 
 export const navLinks = [

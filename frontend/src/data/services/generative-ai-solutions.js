@@ -64,7 +64,7 @@ const serviceData = {
     heading: 'Request a Quote',
     title: 'Let’s build the AI experience your users need',
     description: 'Share your use case and we will help shape a practical, valuable AI experience.',
-    contacts: [{ label: 'Email', value: 'hello@digitalprisma.com' }, { label: 'Phone / WhatsApp', value: '+91 89209 28177' }, { label: 'Office', value: 'Noida, Uttar Pradesh, India' }],
+    contacts: [{ label: 'Email', value: 'contact@codeorbit.com' }, { label: 'Phone / WhatsApp', value: '+91 73176 51331' }, { label: 'Office', value: 'Noida, Uttar Pradesh, India' }],
     ratingText: 'Rated 5.0 by teams launching AI-first experiences',
     successMessage: 'Your generative AI inquiry has been received. We will reach out soon.',
     placeholder: 'Describe the AI feature, content workflow, or knowledge system you want to build...',

@@ -13,12 +13,12 @@ const GEMINI_MODELS = [
 ].filter((model, index, models) => model && models.indexOf(model) === index);
 const MAX_OUTPUT_TOKENS = Number(process.env.GEMINI_MAX_OUTPUT_TOKENS || 500);
 const CONTACT_FALLBACK =
-  "Welcome to Code Orbit! For inquiries, reach us at hello@codeorbit.com or +91 89209 28177.";
+  "Welcome to Code Orbit! For inquiries, reach us at contact@codeorbit.com or +91 73176 51331.";
 const SYSTEM_INSTRUCTION =
   'You are a friendly and helpful assistant for Code Orbit, a full-service digital marketing and web development agency. ' +
   'Answer questions about Code Orbit, web development, app development, digital marketing, SEO, PPC, content creation, design, branding, ecommerce, and project inquiries. ' +
   'Keep answers concise, practical, and warm. When a user asks for pricing or a custom quote, ask for the project scope and suggest contacting the team. ' +
-  'If you do not know the answer, say you will connect them with a human expert and share hello@codeorbit.com or +91 89209 28177.';
+  'If you do not know the answer, say you will connect them with a human expert and share contact@codeorbit.com or +91 73176 51331.';
 
 function getOfflineResponse(message = '') {
   const msg = message.toLowerCase();
@@ -27,13 +27,13 @@ function getOfflineResponse(message = '') {
     return "Hello! Welcome to Code Orbit. How can we help you with your web, app, or digital marketing project today?";
   }
   if (msg.includes('price') || msg.includes('cost') || msg.includes('quote') || msg.includes('rate') || msg.includes('pricing')) {
-    return "Our pricing depends on project scope and custom requirements. Reach out to us at hello@codeorbit.com or +91 89209 28177 for a custom estimate!";
+    return "Our pricing depends on project scope and custom requirements. Reach out to us at contact@codeorbit.com or +91 73176 51331 for a custom estimate!";
   }
   if (msg.includes('service') || msg.includes('offer') || msg.includes('do you do') || msg.includes('what do you do')) {
     return "Code Orbit offers Web Development, Mobile App Development, Digital Marketing, SEO, UI/UX Design, and Custom Software Solutions. How can we assist your business?";
   }
   if (msg.includes('contact') || msg.includes('email') || msg.includes('phone') || msg.includes('number') || msg.includes('call') || msg.includes('reach')) {
-    return "You can reach the Code Orbit team via email at hello@codeorbit.com or call us directly at +91 89209 28177.";
+    return "You can reach the Code Orbit team via email at contact@codeorbit.com or call us directly at +91 73176 51331.";
   }
   if (msg.includes('web') || msg.includes('website') || msg.includes('frontend') || msg.includes('react')) {
     return "We specialize in modern, high-performance web application development using React, Node.js, Next.js, and custom stack solutions!";

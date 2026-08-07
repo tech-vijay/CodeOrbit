@@ -158,7 +158,7 @@ export default function ServiceTemplate({ serviceData }) {
             }
           } catch {
             setPayStatus('error');
-            setPayError('Could not verify payment. Please contact support at hello@digitalprisma.com.');
+            setPayError('Could not verify payment. Please contact support at contact@codeorbit.com.');
           }
         },
         modal: { ondismiss: () => { setPayStatus('idle'); } },
@@ -376,7 +376,7 @@ export default function ServiceTemplate({ serviceData }) {
               <h2 className="text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">{inquiry.title || 'Let’s discuss your project'}</h2>
               <p className="mt-4 text-base text-slate-600">{inquiry.description || 'Share your goals and we will map out a tailored solution that fits your team and roadmap.'}</p>
               <div className="mt-8 space-y-4">
-                {(inquiry.contacts || [{ label: 'Email', value: 'hello@digitalprisma.com' }, { label: 'Phone / WhatsApp', value: '+91 89209 28177' }, { label: 'Office', value: 'Noida, Uttar Pradesh, India' }]).map((c) => (
+                {(inquiry.contacts || [{ label: 'Email', value: 'contact@codeorbit.com' }, { label: 'Phone / WhatsApp', value: '+91 73176 51331' }, { label: 'Office', value: 'Noida, Uttar Pradesh, India' }]).map((c) => (
                   <div key={c.label} className="rounded-2xl border border-slate-200 bg-white p-5"><p className="text-xs font-semibold uppercase tracking-wider text-slate-400">{c.label}</p><p className="mt-1 text-base font-medium text-slate-900">{c.value}</p></div>
                 ))}
               </div>

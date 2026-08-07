@@ -65,7 +65,7 @@ const serviceData = {
     heading: 'Request a Quote',
     title: 'Let’s design the right AI agent for your business',
     description: 'Tell us the workflow you want to automate and we will shape an agent strategy around your needs.',
-    contacts: [{ label: 'Email', value: 'hello@digitalprisma.com' }, { label: 'Phone / WhatsApp', value: '+91 89209 28177' }, { label: 'Office', value: 'Noida, Uttar Pradesh, India' }],
+    contacts: [{ label: 'Email', value: 'contact@codeorbit.com' }, { label: 'Phone / WhatsApp', value: '+91 73176 51331' }, { label: 'Office', value: 'Noida, Uttar Pradesh, India' }],
     ratingText: 'Rated 5.0 by teams modernizing operations with AI',
     successMessage: 'Your AI agent inquiry has been received. Our team will be in touch shortly.',
     placeholder: 'Describe the task, workflow, or decision you want the agent to handle...',

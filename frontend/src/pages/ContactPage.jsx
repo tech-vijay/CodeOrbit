@@ -63,10 +63,16 @@ export default function ContactPage() {
               { icon: MapPin, label: 'Visit Us', value: 'Noida, Uttar Pradesh, India', href: '#map' },
               { icon: Clock, label: 'Working Hours', value: 'Mon - Fri, 10am - 7pm IST', href: null },
             ].map((c) => (
-              <div key={c.label} className="rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300 hover:shadow-lg">
+              <div key={c.label} className="min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300 hover:shadow-lg">
                 <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 text-cyan-600"><c.icon className="h-6 w-6" /></span>
                 <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-slate-400">{c.label}</p>
-                {c.href ? <a href={c.href} className="mt-1 block text-base font-medium text-slate-900 transition-colors hover:text-cyan-600">{c.value}</a> : <p className="mt-1 text-base font-medium text-slate-900">{c.value}</p>}
+                {c.href ? (
+                  <a href={c.href} className="mt-1 block text-sm sm:text-base font-medium text-slate-900 transition-colors hover:text-cyan-600 break-all">
+                    {c.value}
+                  </a>
+                ) : (
+                  <p className="mt-1 text-sm sm:text-base font-medium text-slate-900 break-all">{c.value}</p>
+                )}
               </div>
             ))}
           </div>

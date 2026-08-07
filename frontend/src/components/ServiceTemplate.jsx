@@ -377,7 +377,10 @@ export default function ServiceTemplate({ serviceData }) {
               <p className="mt-4 text-base text-slate-600">{inquiry.description || 'Share your goals and we will map out a tailored solution that fits your team and roadmap.'}</p>
               <div className="mt-8 space-y-4">
                 {(inquiry.contacts || [{ label: 'Email', value: 'codeorbitsoftwaresolutions@gmail.com' }, { label: 'Phone / WhatsApp', value: '+91 73176 51331' }, { label: 'Office', value: 'Noida, Uttar Pradesh, India' }]).map((c) => (
-                  <div key={c.label} className="rounded-2xl border border-slate-200 bg-white p-5"><p className="text-xs font-semibold uppercase tracking-wider text-slate-400">{c.label}</p><p className="mt-1 text-base font-medium text-slate-900">{c.value}</p></div>
+                  <div key={c.label} className="min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">{c.label}</p>
+                    <p className="mt-1 text-sm sm:text-base font-medium text-slate-900 break-all">{c.value}</p>
+                  </div>
                 ))}
               </div>
               <div className="mt-8 flex items-center gap-3 rounded-2xl border border-cyan-200 bg-cyan-50 p-5">

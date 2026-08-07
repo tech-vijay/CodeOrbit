@@ -148,11 +148,11 @@ export default function ChatBot() {
 
   return (
     <>
-      <button onClick={() => (open ? setOpen(false) : handleOpen())} aria-label={open ? 'Close chat' : 'Open chat'} className={`fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-[60] flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full shadow-xl transition-all duration-300 ${open ? 'bg-slate-800 text-white rotate-90' : 'bg-gradient-to-br from-cyan-400 to-blue-600 text-white shadow-cyan-500/40 hover:scale-110 hover:shadow-cyan-500/60'}`}>
-        {open ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
+      <button onClick={() => (open ? setOpen(false) : handleOpen())} aria-label={open ? 'Close chat' : 'Open chat'} className={`fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-[60] flex h-14 w-14 items-center justify-center rounded-full shadow-xl transition-all duration-300 ${open ? 'bg-slate-800 text-white rotate-90' : 'bg-gradient-to-br from-cyan-400 to-blue-600 text-white shadow-cyan-500/40 hover:scale-110 hover:shadow-cyan-500/60'}`}>
+        {open ? <X className="h-7 w-7" /> : <MessageCircle className="h-7 w-7" />}
       </button>
       {open && (
-        <div className="fixed bottom-20 sm:bottom-24 right-3 sm:right-6 z-[60] flex h-[min(580px,80vh)] w-[calc(100vw-1.5rem)] sm:w-[390px] max-w-[390px] flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-slate-900/20 animate-[slideUp_0.3s_ease]">
+        <div className="fixed bottom-[5.25rem] sm:bottom-24 right-3 sm:right-6 z-[60] flex h-[min(580px,80vh)] w-[calc(100vw-1.5rem)] sm:w-[390px] max-w-[390px] flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-slate-900/20 animate-[slideUp_0.3s_ease]">
           <div className="flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 px-4 py-3.5 sm:px-5 sm:py-4">
             <span className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm"><Sparkles className="h-5 w-5 text-white" /></span>
             <div>

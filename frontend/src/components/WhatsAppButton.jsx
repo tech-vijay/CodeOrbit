@@ -18,9 +18,9 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noreferrer"
       aria-label="Chat with Code Orbit on WhatsApp"
-      className="group fixed bottom-24 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-green-700/30 transition-transform duration-300 hover:scale-110 hover:bg-[#1ebe5a] focus:outline-none focus:ring-4 focus:ring-green-400/40 sm:bottom-28 sm:right-7"
+      className="group fixed bottom-[5.25rem] right-5 sm:bottom-24 sm:right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl shadow-green-700/30 transition-transform duration-300 hover:scale-110 hover:bg-[#1ebe5a] focus:outline-none focus:ring-4 focus:ring-green-400/40"
     >
-      <WhatsAppIcon className="h-8 w-8" />
+      <WhatsAppIcon className="h-7 w-7" />
       <span className="absolute right-[calc(100%+0.75rem)] whitespace-nowrap rounded-lg bg-slate-950 px-3 py-2 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100">Chat on WhatsApp</span>
     </a>
   );

@@ -148,19 +148,19 @@ export default function ChatBot() {
 
   return (
     <>
-      <button onClick={() => (open ? setOpen(false) : handleOpen())} aria-label={open ? 'Close chat' : 'Open chat'} className={`fixed bottom-6 right-6 z-[60] flex h-14 w-14 items-center justify-center rounded-full shadow-xl transition-all duration-300 ${open ? 'bg-slate-800 text-white rotate-90' : 'bg-gradient-to-br from-cyan-400 to-blue-600 text-white shadow-cyan-500/40 hover:scale-110 hover:shadow-cyan-500/60'}`}>
+      <button onClick={() => (open ? setOpen(false) : handleOpen())} aria-label={open ? 'Close chat' : 'Open chat'} className={`fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-[60] flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full shadow-xl transition-all duration-300 ${open ? 'bg-slate-800 text-white rotate-90' : 'bg-gradient-to-br from-cyan-400 to-blue-600 text-white shadow-cyan-500/40 hover:scale-110 hover:shadow-cyan-500/60'}`}>
         {open ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
       </button>
       {open && (
-        <div className="fixed bottom-24 right-6 z-[60] flex h-[min(600px,75vh)] w-[min(390px,calc(100vw-3rem))] flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-slate-900/20 animate-[slideUp_0.3s_ease]">
-          <div className="flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-4">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm"><Sparkles className="h-5 w-5 text-white" /></span>
+        <div className="fixed bottom-20 sm:bottom-24 right-3 sm:right-6 z-[60] flex h-[min(580px,80vh)] w-[calc(100vw-1.5rem)] sm:w-[390px] max-w-[390px] flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-slate-900/20 animate-[slideUp_0.3s_ease]">
+          <div className="flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 px-4 py-3.5 sm:px-5 sm:py-4">
+            <span className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm"><Sparkles className="h-5 w-5 text-white" /></span>
             <div>
               <p className="text-sm font-bold text-white">Code Orbit Support</p>
               <p className="flex items-center gap-1.5 text-xs text-cyan-50"><span className="h-2 w-2 rounded-full bg-green-400" />Online now</p>
             </div>
           </div>
-          <div ref={scrollRef} className="flex-1 space-y-4 overflow-y-auto bg-slate-50 px-4 py-5">
+          <div ref={scrollRef} className="flex-1 space-y-4 overflow-y-auto bg-slate-50 px-3.5 py-4 sm:px-4 sm:py-5">
             {messages.map((msg) => (
               <div key={msg.id} className={`flex items-end gap-2 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}>
                 {msg.role !== 'user' && <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-cyan-400 to-blue-600"><Sparkles className="h-4 w-4 text-white" /></span>}
@@ -181,18 +181,18 @@ export default function ChatBot() {
               </div>
             )}
           </div>
-          <div className="border-t border-slate-100 bg-white p-3">
+          <div className="border-t border-slate-100 bg-white p-2.5 sm:p-3">
             {imagePreview && (
               <div className="relative mb-2 w-fit">
-                <img src={imagePreview} alt="Preview" className="h-20 w-20 rounded-md object-cover" />
+                <img src={imagePreview} alt="Preview" className="h-16 w-16 sm:h-20 sm:w-20 rounded-md object-cover" />
                 <button onClick={removeImage} className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-slate-800 text-white transition-transform hover:scale-110"><XCircle className="h-4 w-4" /></button>
               </div>
             )}
-            <form onSubmit={handleSubmit} className="flex items-center gap-2">
+            <form onSubmit={handleSubmit} className="flex items-center gap-1.5 sm:gap-2">
               <input ref={fileInputRef} type="file" accept="image/*" onChange={handleFileSelect} className="hidden" />
-              <button type="button" onClick={() => fileInputRef.current?.click()} disabled={typing || uploading} className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-700 disabled:cursor-not-allowed disabled:opacity-50"><Paperclip className="h-5 w-5" /></button>
-              <input ref={inputRef} type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder={uploading ? "Uploading..." : "Type a message..."} className="flex-1 rounded-full border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none placeholder:text-slate-400 focus:border-cyan-400" disabled={typing || uploading} />
-              <button type="submit" disabled={(!input.trim() && !imageFile) || typing || uploading} className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 text-white transition-all disabled:opacity-50">{uploading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}</button>
+              <button type="button" onClick={() => fileInputRef.current?.click()} disabled={typing || uploading} className="flex h-9 w-9 sm:h-10 sm:w-10 flex-shrink-0 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-700 disabled:cursor-not-allowed disabled:opacity-50"><Paperclip className="h-4 w-4 sm:h-5 sm:w-5" /></button>
+              <input ref={inputRef} type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder={uploading ? "Uploading..." : "Type a message..."} className="min-w-0 flex-1 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-2 sm:px-4 sm:py-2.5 text-sm outline-none placeholder:text-slate-400 focus:border-cyan-400" disabled={typing || uploading} />
+              <button type="submit" disabled={(!input.trim() && !imageFile) || typing || uploading} className="flex h-9 w-9 sm:h-10 sm:w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 text-white transition-all disabled:opacity-50">{uploading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}</button>
             </form>
           </div>
         </div>

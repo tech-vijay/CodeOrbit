@@ -92,7 +92,7 @@ const serviceData = {
     heading: 'Request a Quote',
     title: 'Let’s build the software your business needs',
     description: 'Share your goals and we will map out a tailored solution, plan, and roadmap that fits your team and timeline.',
-    contacts: [{ label: 'Email', value: 'contact@codeorbit.com' }, { label: 'Phone / WhatsApp', value: '+91 73176 51331' }, { label: 'Office', value: 'Noida, Uttar Pradesh, India' }],
+    contacts: [{ label: 'Email', value: 'codeorbitsoftwaresolutions@gmail.com' }, { label: 'Phone / WhatsApp', value: '+91 73176 51331' }, { label: 'Office', value: 'Noida, Uttar Pradesh, India' }],
     ratingText: 'Rated 5.0 by teams building smarter internal and customer-facing platforms',
     successMessage: 'Your software inquiry has been received. Our team will reach out with a tailored proposal soon.',
     placeholder: 'Describe the workflow, pain points, and goals for your software project...',

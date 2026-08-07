@@ -28,7 +28,7 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white">Contact</h4>
             <ul className="mt-4 space-y-3 text-sm">
-              <li className="flex items-start gap-3"><Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-cyan-400" />contact@codeorbit.com</li>
+              <li className="flex items-start gap-3"><Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-cyan-400" />codeorbitsoftwaresolutions@gmail.com</li>
               <li className="flex items-start gap-3"><Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-cyan-400" />+91 7317651331</li>
               <li className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-cyan-400" />Noida, Uttar Pradesh, India</li>
             </ul>

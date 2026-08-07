@@ -92,7 +92,7 @@ const serviceData = {
     heading: 'Request a Quote',
     title: 'Let’s build your website',
     description: 'Fill out the form with your project details and we will send you a tailored proposal within one business day. No obligation, no pressure.',
-    contacts: [{ label: 'Email', value: 'contact@codeorbit.com' }, { label: 'Phone / WhatsApp', value: '+91 73176 51331' }, { label: 'Office', value: 'Noida, Uttar Pradesh, India' }],
+    contacts: [{ label: 'Email', value: 'codeorbitsoftwaresolutions@gmail.com' }, { label: 'Phone / WhatsApp', value: '+91 73176 51331' }, { label: 'Office', value: 'Noida, Uttar Pradesh, India' }],
     ratingText: 'Rated 5.0 by 250+ clients for web development excellence',
     successMessage: 'Your project inquiry has been received. Our web development team will reach out within one business day with a tailored proposal.',
     placeholder: 'Tell us about your project — goals, features, references...',

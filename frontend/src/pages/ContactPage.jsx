@@ -58,7 +58,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: Mail, label: 'Email Us', value: 'contact@codeorbit.com', href: 'mailto:contact@codeorbit.com' },
+              { icon: Mail, label: 'Email Us', value: 'codeorbitsoftwaresolutions@gmail.com', href: 'mailto:codeorbitsoftwaresolutions@gmail.com' },
               { icon: Phone, label: 'Call Us', value: '+91 73176 51331', href: 'tel:+91 7317651331' },
               { icon: MapPin, label: 'Visit Us', value: 'Noida, Uttar Pradesh, India', href: '#map' },
               { icon: Clock, label: 'Working Hours', value: 'Mon - Fri, 10am - 7pm IST', href: null },
